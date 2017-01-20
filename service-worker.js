@@ -8,7 +8,7 @@ self.addEventListener('push', function(event) {
   // ペイロードの暗号化を行うか、FetchAPIで動的に情報を取得する必要があります。
   var title = '失礼致します';
   var body = '機能は随分お楽しみでしたね？';
-  var icon = 'new_icon.jpg';
+  var icon = 'new_icon.jpg?170120';
   var tag = 'simple-push-demo-notification-tag';
   var url = 'https://www.npa.go.jp/';
 
