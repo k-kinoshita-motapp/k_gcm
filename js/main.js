@@ -36,6 +36,7 @@ console.log('0022200');
 console.log('0033300');
 
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+console.log('0044400');
     // 登録されているsubscriptionを取得します。
     serviceWorkerRegistration.pushManager.getSubscription()
         .then(function(subscription) {
@@ -66,6 +67,7 @@ console.log('0033300');
  * 登録されているsubscription通知を解除します。
  */
 function unsubscribe() {
+console.log('0055500');
   pushButton.disabled = true;
   curlCommandArea.textContent = '';
 
@@ -94,6 +96,7 @@ function unsubscribe() {
  * subscriptionを登録し結果を取得します。
  */
 function subscribe() {
+console.log('0066600');
   pushButton.disabled = true;
 
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
@@ -119,6 +122,7 @@ function subscribe() {
  * 登録したsubscriptionをサーバーに送ります。
  */
 function sendSubscriptionToServer(subscription) {
+console.log('0077700');
   var mergedEndpoint = endpointWorkaround(subscription);
   showCurlCommand(mergedEndpoint);
 }
@@ -127,6 +131,7 @@ function sendSubscriptionToServer(subscription) {
  * 非サポートメッセージを表示します。
  */
 function showUnsupported() {
+console.log('0088800');
   document.querySelector('.supported').style.display = 'none';
   document.querySelector('.unsupported').style.display = 'block';
 }
@@ -135,6 +140,7 @@ function showUnsupported() {
  * 引数に指定されてEndpointの情報を元にcURLコマンドを作成し表示します。
  */
 function showCurlCommand(mergedEndpoint) {
+console.log('0099900');
   if (mergedEndpoint.indexOf(GCM_ENDPOINT) !== 0) {
     console.log('This browser isn\'t currently supported for this demo');
     return;
@@ -153,6 +159,7 @@ function showCurlCommand(mergedEndpoint) {
 }
 
 function endpointWorkaround(pushSubscription) {
+console.log('0010101000');
   if (pushSubscription.endpoint.indexOf('https://android.googleapis.com/gcm/send') !== 0) {
     return pushSubscription.endpoint;
   }
@@ -167,6 +174,7 @@ function endpointWorkaround(pushSubscription) {
 }
 
 window.addEventListener('load', function() {
+console.log('0011111100');
   pushButton.addEventListener('click', function() {
     if (!pushButton.checked) {
       unsubscribe();
@@ -189,6 +197,7 @@ window.addEventListener('load', function() {
  * cURLコマンドの領域をクリックしたらコマンドを全選択します。
  */
 function selectCurlText() {
+console.log('0012121200');
   var range = document.createRange();
   range.selectNodeContents(curlCommandArea);
   window.getSelection().removeAllRanges();
