@@ -19,18 +19,21 @@ function initialize() {
     showUnsupported();
     return;
   }
+console.log('0011100');
   // プッシュ通知が拒否設定になっていないかを確認
   if (Notification.permission === 'denied') {
     console.log('The user has blocked notifications.');
     showUnsupported();
     return;
   }
+console.log('0022200');
   // プッシュ通知に対応しているかの判定
   if (!('PushManager' in window)) {
     console.log('Push messaging isn\'t supported.');
     showUnsupported();
     return;
   }
+console.log('0033300');
 
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     // 登録されているsubscriptionを取得します。
