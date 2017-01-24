@@ -175,8 +175,10 @@ console.log('0010101000');
 
 window.addEventListener('load', function() {
 console.log('0011111100');
+console.log('window addEventListener');
   pushButton.addEventListener('click', function() {
     if (!pushButton.checked) {
+console.log('addEventListener pushButton.checked');
       unsubscribe();
     } else {
       subscribe();
