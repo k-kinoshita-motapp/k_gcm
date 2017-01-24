@@ -185,7 +185,7 @@ console.log('0011111100');
 
   // ServiceWokerをサポートしているかチェック
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
+    navigator.serviceWorker.register('./service-worker2.js')
     .then(initialize);
   } else {
     showUnsupported();
