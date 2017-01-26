@@ -179,15 +179,17 @@ console.log('window addEventListener');
   pushButton.addEventListener('click', function() {
     if (!pushButton.checked) {
 console.log('addEventListener pushButton.checked');
+//トグルが外れたとき
       unsubscribe();
     } else {
+//トグルがオンになったとき
       subscribe();
     }
   });
 
   // ServiceWokerをサポートしているかチェック
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker2.js')
+    navigator.serviceWorker.register('./service-worker.js')
     .then(initialize);
   } else {
     showUnsupported();
