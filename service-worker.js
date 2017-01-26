@@ -6,12 +6,16 @@ self.addEventListener('push', function(event) {
   // サンプルでは固定のメッセージを通知するようにしています。
   // 動的にユーザーごとにメッセージを変えたい場合は、
   // ペイロードの暗号化を行うか、FetchAPIで動的に情報を取得する必要があります。
-  var title = '失礼致します';
+  var DD = new Date();
+  var Year = DD.getYear();
+  var Month = DD.getMonth() + 1;
+  var Day = DD.getDate();
+  var Hours = DD.getHours();
+  var Minutes = DD.getMinutes();
+  var Seconds = DD.getSeconds();
+  var title = '['+Hours+':'+Minutes+':'+Seconds+':'+']失礼致します';
   var body = '機能は随分お楽しみでしたね？';
   var icon = 'new_icon.jpg?170124';
-//  var title = '失礼致します2';
-//  var body = '機能は随分お楽しみでしたね？2';
-//  var icon = 'new_icon2.jpg?170124';
   var tag = 'simple-push-demo-notification-tag';
   var url = 'https://www.npa.go.jp/';
 
