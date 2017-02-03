@@ -13,9 +13,10 @@ self.addEventListener('push', function(event) {
   var Hours = DD.getHours();
   var Minutes = DD.getMinutes();
   var Seconds = DD.getSeconds();
-  var title = '['+Hours+':'+Minutes+':'+Seconds+']失礼致します2';
-  var body = '機能は随分お楽しみでしたね？2';
-  var icon = 'new_icon2.jpg?170124';
+  var rand = Math.floor( Math.random() * 2 ) + 1;
+  var title = '['+Hours+':'+Minutes+':'+Seconds+']プッシュ通知失礼致します'+rand;
+  var body = '昨日は随分お楽しみでしたね？'+rand;
+  var icon = 'new_icon'+rand+'.jpg?170124';
   var tag = 'simple-push-demo-notification-tag';
   var url = 'https://www.npa.go.jp/';
 
